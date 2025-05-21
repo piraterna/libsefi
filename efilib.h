@@ -5,6 +5,10 @@
 
 #define EFI_ERROR(status) (((EFI_INTN)(status)) < 0)
 
+#define EFI_PAGE_MASK 0xFFF
+#define EFI_PAGE_SHIFT 12
+#define EFI_SIZE_TO_PAGES(size) (((size) >> EFI_PAGE_SHIFT) + (((size) & EFI_PAGE_MASK) ? 1 : 0))
+
 static inline const char *efi_status_to_str(EFI_STATUS s)
 {
 	switch (s) {

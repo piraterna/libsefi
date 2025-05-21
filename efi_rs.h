@@ -46,6 +46,8 @@
 
 #define EFI_CAPSULE_REPORT_GUID {0x39b68c46,0xf7fb,0x441b, {0xb6,0xec,0x16,0xb0,0xf6,0x98,0x21,0xf3}}
 
+#define EFI_GLOBAL_VARIABLE {0x8be4df61,0x93ca,0x11d2, {0xaa,0x0d,0x00,0xe0,0x98,0x03,0x2b,0x8c}}
+
 typedef struct _EFI_RUNTIME_SERVICES EFI_RUNTIME_SERVICES;
 
 typedef enum {
@@ -284,7 +286,7 @@ typedef struct _EFI_RUNTIME_SERVICES {
 
 	// Time Services
 	EFI_GET_TIME GetTime; 
-	EFI_SET_TIME SetTime; 
+	EFI_SET_TIME SetTime;
 	EFI_GET_WAKEUP_TIME GetWakeupTime; 
 	EFI_SET_WAKEUP_TIME SetWakeupTime; 
 

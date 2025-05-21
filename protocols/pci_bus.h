@@ -1,6 +1,13 @@
 #ifndef EFI_PROTOCOLS_PCI_BUS_H
 #define EFI_PROTOCOLS_PCI_BUS_H
 
+#define EFI_PCI_ADDRESS(bus, dev, func, reg) \
+			(EFI_UINT64)( \
+			(((EFI_UINTN)bus) << 24) | \
+			(((EFI_UINTN)dev) << 16) | \
+			(((EFI_UINTN)func) << 8) | \
+			(((EFI_UINTN)(reg)) < 256 ? ((EFI_UINTN)(reg)) : (EFI_UINT64)((reg) << 32)))
+
 ////
 // PCI Root Bridge I/O Protocol
 ///

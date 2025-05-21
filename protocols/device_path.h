@@ -8,12 +8,21 @@
 #define EFI_DEVICE_PATH_PROTOCOL_GUID {0x09576e91,0x6d3f,0x11d2,{0x8e,0x39,0x00,0xa0,0xc9,0x69,0x72,0x3b}}
 
 typedef struct _EFI_DEVICE_PATH_PROTOCOL EFI_DEVICE_PATH_PROTOCOL;
+typedef struct _EFI_MEMMAP_DEVICE_PATH EFI_MEMMAP_DEVICE_PATH;
 
 typedef struct _EFI_DEVICE_PATH_PROTOCOL {
 	EFI_UINT8 Type;
 	EFI_UINT8 SubType;
 	EFI_UINT8 Length[2];
 } EFI_DEVICE_PATH_PROTOCOL;
+
+struct _EFI_MEMMAP_DEVICE_PATH
+{
+    EFI_DEVICE_PATH_PROTOCOL Header;
+    EFI_UINT32 MemoryType;
+    EFI_PHYSICAL_ADDRESS StartingAddress;
+    EFI_PHYSICAL_ADDRESS EndingAddress;
+};
 
 ////
 // EFI Device Path Utilities Protocol
